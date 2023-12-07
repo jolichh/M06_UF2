@@ -40,7 +40,7 @@ function arrayColors() {
     senseVerd = senseVerd.filter(elemento => elemento !== "verd");
 
     //mostrar por pagina web
-    let div = document.createElement("div");
+    let div = document.getElementById("funciones");
     let content = `<p>
                     <b>Tots els colors són menors que 'marró':</b> ${totsMenors}<br>
                     <b>Colors menors que 'marró':</b> ${menors}<br>
@@ -49,7 +49,6 @@ function arrayColors() {
                     <b>Després d'eliminar 'verd':</b> ${senseVerd}<br>
                     </p>`;
     div.innerHTML = content;
-    document.body.appendChild(div);
 }
 
 //funció per a findIndex. Retorna posició de "marró"
