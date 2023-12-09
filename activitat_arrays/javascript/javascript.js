@@ -92,82 +92,129 @@ let entrie="";
     txt += `<p><b>every():</b> arreglo = [${cada.toString()}] -> resultado = arrelgo.entries(elemento => elemento != "verde") -> ${cada.every(elemento => elemento != "verde")}`;
 
     //Fill the elements in an array with a static value
-    let rellena = "";
-    txt += `<p><b>fill() :</b> arreglo = [${entrie.toString()}]`;
+    let rellena = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>fill() :</b> arreglo = [${rellena.toString()}] -> arreglo.fill("kiwi") -> ${rellena.fill("kiwi").toString()}`;
     
     //Creates a new array with every element in an array that pass a test
-    let filtra = "";
-    txt += `<p><b>filter() :</b> arreglo = [${entrie.toString()}]`;
+    let filtra = [32, 12, 33, 16, 40];
+    txt += `<p><b>filter() :</b> arreglo = [${filtra.toString()}] -> resultado = arreglo.filter(elemento => elemento >= 18) -> ${filtra.filter(elemento => elemento >= 18)}`;
 
     //Returns the value of the first element in an array that pass a test
-    txt += `<p><b>find() :</b> arreglo = [${entrie.toString()}]`;
+    let busca = [32, 12, 33, 16, 40];
+    txt += `<p><b>find() :</b> arreglo = [${busca.toString()}] -> arreglo.find(elemento => elemento >= 18) -> ${busca.find(elemento => elemento >= 18)}`;
 
     //Returns the index of the first element in an array that pass a test
-    txt += `<p><b>findIndex() :</b> arreglo = [${entrie.toString()}]`;
+    let indice = [32, 12, 33, 16, 40];
+    txt += `<p><b>findIndex() :</b> arreglo = [${indice.toString()}] -> arreglo.findIndex(elemento => elemento >= 18) -> ${indice.findIndex(elemento => elemento >= 18)}`;
 
     //Concatenates sub-array elements
-    txt += `<p><b>flat() :</b> arreglo = [${entrie.toString()}]`;
+    let concat = [[1,2],[3,4],[5,6]];
+    txt += `<p><b>flat() :</b> arreglo = [${concat.toString()}] -> newArr = arreglo.flat() -> ${concat.flat()}`;
 
     //Maps all array elements and creates a new flat array
-    let plano = "";
-    txt += `<p><b>flatMap() :</b> arreglo = [${entrie.toString()}]`;
+    let plano = [1, 2, 3, 4, 5,6];
+    txt += `<p><b>flatMap() :</b> arreglo = [${plano.toString()}] -> newArr = arreglo.flatMap((elem) => elem*2) -> newArr = ${plano.flatMap((elem) => elem*2)}`;
 
     //Calls a function for each array element
-    txt += `<p><b>forEach() :</b> arreglo = [${entrie.toString()}]`;
+    let foreach = ["apple", "orange", "cherry"];
+    let texto = "<br>";
+    foreach.forEach(miFuncion)
+    txt += `<p><b>forEach() :</b> arreglo = [${foreach.toString()}] -> let txt = ""; arreglo.forEach(myFunction); function myFunction(item, index) { txt += index + ": " + item;} -> txt = ${texto} `;
+    
+    function miFuncion(item, index) {
+        texto += `${index} : ${item}<br>`;
+    }
 
     //Creates an array from an object
-    txt += `<p><b>from() :</b> arreglo = [${entrie.toString()}]`;
+    let obj = "ABCDEFG";
+    txt += `<p><b>from() :</b> arreglo = [${obj.toString()}] -> newArr = Array.from(txt) -> ${Array.from(obj)}`;
 
     //Check if an array contains the specified element
-    txt += `<p><b>includes() :</b> arreglo = [${entrie.toString()}]`;
+    let arrIncludes = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>includes() :</b> arreglo = [${arrIncludes.toString()}] -> arreglo.includes("Mango") -> ${arrIncludes.includes("Mango")}`;
 
     //Search the array for an element and returns its position
-    txt += `<p><b>indexOf() :</b> arreglo = [${entrie.toString()}]`;
+    let arrIndexOf = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>indexOf() :</b> arreglo = [${arrIndexOf.toString()}] -> index = arreglo.indexOf("Apple") -> index = ${arrIndexOf.indexOf("Apple")}`;
 
     //Checks whether an object is an array
-    txt += `<p><b>isArray() :</b> arreglo = [${entrie.toString()}]`;
+    let checkear = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>isArray() :</b> arreglo = [${checkear.toString()}] -> esArray = Array.isArray(arreglo) -> esArray = ${Array.isArray(checkear)}`;
 
     //Joins all elements of an array into a string
-    let juntar = "";
-    txt += `<p><b>join() :</b> arreglo = [${entrie.toString()}]`;
+    let juntar = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>join() :</b> arreglo = [${juntar.toString()}] -> txt = arreglo.join(" and ") -> txt = ${juntar.join(" and ")}`;
 
     //Returns a Array Iteration Object, containing the keys of the original array
-    txt += `<p><b>keys():</b> arreglo = [${entrie.toString()}]`;
+    let iterar = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>keys():</b> arreglo = [${iterar.toString()}] -> key = Array.from(fruits.keys());
+     -> key = ${Array.from(iterar.keys())}`;
+
     //Search the array for an element, starting at the end, and returns its position
-    txt += `<p><b>lastIndexOf() :</b> arreglo = [${entrie.toString()}]`;
+    let buscaIndex = ["Apple", "Orange", "Apple", "Mango", "Orange"];
+    txt += `<p><b>lastIndexOf() :</b> arreglo = [${buscaIndex.toString()}] -> arreglo.lastIndexOf("Orange") -> ${buscaIndex.lastIndexOf("Orange")}`;
 
     //Sets or returns the number of elements in an array
-    txt += `<p><b>length :</b> arreglo = [${entrie.toString()}]`;
+    let largo = ["Maria", "Thomas", "Paula", "Marcos"];
+    txt += `<p><b>length :</b> arreglo = [${largo.toString()}] -> arreglo.length -> ${largo.length}`;
     
     //Creates a new array with the result of calling a function for each array element
-    txt += `<p><b>map() :</b> arreglo = [${entrie.toString()}]`;
+    let mapp = [65, 44, 12, 4];
+    txt += `<p><b>map() :</b> arreglo = [${mapp.toString()}] -> newArr = arreglo.map(funcionMultiplicaPorDiez) -> ${mapp.map(myFunction)}`;
+
+    function myFunction(num) {
+        return num * 10;
+    }
     
     //Removes the last element of an array, and returns that element
-    txt += `<p><b>pop() :</b> arreglo = [${entrie.toString()}]`;
+    let popea = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>pop() :</b> arreglo = [${popea.toString()}] -> arreglo.pop() -> ${popea.pop()}`;
     
     //Allows you to add properties and methods to an Array object
-    txt += `<p><b>prototype :</b> arreglo = [${entrie.toString()}]`;
+    let frutas = ["Banana", "Orange", "Apple", "Mango"];
+    Array.prototype.myUcase = function() {
+        for (let i = 0; i < this.length; i++) {
+          this[i] = this[i].toUpperCase();
+        }
+    };
+    let nuevo = [...frutas];
+    nuevo.myUcase();
+    txt += `<p><b>prototype :</b> arreglo = [${frutas.toString()}] -> Array.prototype.miUpperCase = function() { /.../ }; arreglo.miUpperCase(); arreglo == -> ${nuevo}`;
     
     //Adds new elements to the end of an array, and returns the new length
-    txt += `<p><b>push() :</b> arreglo = [${entrie.toString()}]`;
+    let pushear = ["Banana", "Orange", "Apple", "Mango"];
+    let resulta = [...pushear];
+    resulta.push("Coco");
+    txt += `<p><b>push() :</b> arreglo = [${pushear.toString()}] -> arreglo.push("Coco") -> arreglo => ${resulta.toString()}`;
     
     //Reduce the values of an array to a single value (going left-to-right)
-    txt += `<p><b>reduce() :</b> arreglo = [${entrie.toString()}]`;
+    let reducir = [1, 2, 3, 4, 5];
+    const sum = reducir.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    txt += `<p><b>reduce() :</b> arreglo = [${reducir.toString()}] -> resultado = arreglo.reduce((accumulator, currentValue) => accumulator + currentValue, 0) -> resultado == ${sum}`;
     
     //Reduce the values of an array to a single value (going right-to-left)
-    txt += `<p><b>reduceRight() :</b> arreglo = [${entrie.toString()}]`;
+    let words = ["¡", "Hola", "mundo", "!"];
+    let saludo = words.reduceRight((accumulator, currentValue) => accumulator + " " + currentValue);
+    txt += `<p><b>reduceRight() :</b> arreglo = [${words.toString()}] -> resultado = arreglo.reduceRight((accumulator, currentValue) => accumulator + " " + currentValue); -> resultado == ${saludo}`;
     
     //Reverses the order of the elements in an array
-    txt += `<p><b>reverse() :</b> arreglo = [${entrie.toString()}]`;
+    let reverso = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>reverse() :</b> arreglo = [${reverso.toString()}] -> arreglo.reverse() -> ${reverso.reverse()}`;
     
     //Removes the first element of an array, and returns that element
-    txt += `<p><b>shift() :</b> arreglo = [${entrie.toString()}]`;
+    let eliminaPrimer = ["Banana", "Orange", "Apple", "Mango"];
+    let res = [...eliminaPrimer]; 
+    res = eliminaPrimer.shift();
+    txt += `<p><b>shift() :</b> arreglo = [${eliminaPrimer.toString()}] -> arreglo.shift() => ${eliminaPrimer.shift()} PERO SI HACEMOS: result = arreglo.shift(); result == ${res}`;
     
-    //Selects a part of an array, and returns the new array
-    txt += `<p><b>slice() :</b> arreglo = [${entrie.toString()}]`;
+    //Selects a part of an array, and returns the new array .slice(star,end)
+    let parte = ["Banana", "Orange", "Lemon", "Apple", "Mango"];    
+    txt += `<p><b>slice() :</b> arreglo = [${parte.toString()}] -> arreglo.slice(1,3) -> ${parte.slice(1,3)}`;
     
-    //Checks if any of the elements in an array pass a test
-    txt += `<p><b>some() :</b> arreglo = [${entrie.toString()}]`;
+    //Checks if any of the elements in an array pass a test returns TRUE or FALSE
+    let numeros = [1, 2, 3, 4, 5];
+    let esPar = numeros.some(num => num % 2 === 0);
+    txt += `<p><b>some() :</b> arreglo = [${numeros.toString()}] -> evenNum = arreglo.some(num => num % 2 === 0) -> evenNum == ${esPar}`;
     
     //Sorts the elements of an array
     txt += `<p><b>sort() :</b> arreglo = [${entrie.toString()}]`;
