@@ -216,20 +216,30 @@ let entrie="";
     let esPar = numeros.some(num => num % 2 === 0);
     txt += `<p><b>some() :</b> arreglo = [${numeros.toString()}] -> evenNum = arreglo.some(num => num % 2 === 0) -> evenNum == ${esPar}`;
     
-    //Sorts the elements of an array
-    txt += `<p><b>sort() :</b> arreglo = [${entrie.toString()}]`;
+    //Sorts the elements of an array, default sorts by alfabet
+    let frutitas = ["Banana", "Orange", "Apple", "Mango"];
+    txt += `<p><b>sort() :</b> arreglo = [${frutitas.toString()}] -> arreglo.sort() -> ${frutitas.sort()}`;
     
-    //Adds/Removes elements from an array
-    txt += `<p><b>splice() :</b> arreglo = [${entrie.toString()}]`;
+    //Adds/Removes elements from an array, overrites the original array
+    let colores = ["red", "green", "blue", "yellow"];
+    let despues = [...colores];
+    despues.splice(2,0,"purple");
+    txt += `<p><b>splice() :</b> arreglo = [${colores.toString()}] -> arreglo.splice(2,0,"purple") -> arreglo => ${despues}`;
     
     //Converts an array to a string, and returns the result
-    txt += `<p><b>toString() :</b> arreglo = [${entrie.toString()}]`;
+    let salu =  [1, 2, 3, 4, 5];
+    txt += `<p><b>toString() :</b> arreglo = [${salu.toString()}] -> arreglo.toString() -> ${salu.toString()}`;
     
     //Adds new elements to the beginning of an array, and returns the new length
-    txt += `<p><b>unshift() :</b> arreglo = [${entrie.toString()}]`;
+    let fruts = ["Banana", "Orange", "Apple", "Mango"];
+    let copi = [...fruts];
+    copi.unshift("Lemon", "Pineapple");
+    txt += `<p><b>unshift() :</b> arreglo = [${fruts.toString()}] -> arreglo.unshift("Lemon", "Pineapple") -> ${copi}`;
     
     //Returns the primitive value of an array
-    txt += `<p><b>valueOf() :</b> arreglo = [${entrie.toString()}]`;
+    let fru = ["Banana", "Orange", "Apple", "Mango"];
+    let nu = fru.valueOf();
+    txt += `<p><b>valueOf() :</b> arreglo = [${fru.toString()}] -> newArr = arreglo.valueOf() -> newArr => [${nu}]`;
 
     div.innerHTML = txt;
 }
