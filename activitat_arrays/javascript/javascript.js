@@ -86,7 +86,6 @@ function funcionsArray() {
     let arrayEntries = entries.entries();
     txt += `<p><b>entries() :</b> arreglo = [${entries.toString()}] -> resultado = arreglo.entries() -> ${Array.from(arrayEntries).toString()}`;
 
-let entrie="";
     //Checks if every element in an array pass a test
     let cada = ["verd", "vermell", "groc", "blau"];
     txt += `<p><b>every():</b> arreglo = [${cada.toString()}] -> resultado = arrelgo.entries(elemento => elemento != "verde") -> ${cada.every(elemento => elemento != "verde")}`;
